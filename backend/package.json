@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon indesx.js",
+    "dev": "nodemon indesx.js",
     "build": "npm i"
   },
   "author": "Aman",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@mui/icons-material": "^5.11.16",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.1.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-async-handler": "^1.2.0",

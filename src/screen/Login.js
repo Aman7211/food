@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Navbar1 from '../components/Navbar1';
+
+
 export default function Login() {
 
     const [credentials, setcredentials] = useState({email: "", password: "" })
@@ -32,8 +36,11 @@ let navigate = useNavigate();
     }
     return (
         <>
-            <div className="container">
-                <form onSubmit={handleSubmit}>
+          <div>
+                <Navbar1 />
+            </div>
+            <div className="container" style={{"marginBottom":"40px", "marginTop":"40px"}}>
+                <form onSubmit={handleSubmit} >
 
 
                     <div className="mb-3">
@@ -49,6 +56,10 @@ let navigate = useNavigate();
                     <Link to="/createuser" className='m-3 btn btn-danger'>I'm a new user</Link>
                 </form>
             </div>
+            <div>
+
+<Footer />
+</div>
         </>
     )
 }
