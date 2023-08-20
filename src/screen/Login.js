@@ -8,11 +8,11 @@ export default function Login() {
 
     const [credentials, setcredentials] = useState({email: "", password: "" })
 let navigate = useNavigate();
-const apiUrl = "http://localhost:4000/api/loginuser" || "https://food-lecp.onrender.com/api/loginuser";
+// const apiUrl = "http://localhost:4000/api/loginuser" || "https://food-lecp.onrender.com/api/loginuser";
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({ email: credentials.email, password: credentials.password }))
-        const response = await fetch(apiUrl, {
+        const response = await fetch("https://food-lecp.onrender.com/api/loginuser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

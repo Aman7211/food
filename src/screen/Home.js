@@ -8,9 +8,9 @@ export default function Home() {
   const [search, setsearch] = useState('');
 const [foodcat, setfoodcat] = useState([]);
 const [fooditem, setfooditem] = useState([]);
-const apiUrl = "http://localhost:4000/api/foodData" || "https://food-lecp.onrender.com/api/foodData";
+// const apiUrl = "http://localhost:4000/api/foodData" || "https://food-lecp.onrender.com/api/foodData";
 const loadData = async ()=>{
-  let response = await fetch(apiUrl,{
+  let response = await fetch("https://food-lecp.onrender.com/api/foodData",{
     method: "POST",
     headers: {
       'Content-Type' : 'application/json'
