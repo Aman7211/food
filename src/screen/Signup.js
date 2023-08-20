@@ -11,7 +11,7 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, location: credentials.geolocation }))
-        const response = await fetch(`${apiUrl}/api/createuser`, {
+        const response = await fetch(`https://${apiUrl}/api/createuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

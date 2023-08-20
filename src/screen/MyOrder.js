@@ -9,7 +9,7 @@ export default function MyOrder() {
        const apiUrl = process.env.REACT_APP_API_URL;
        const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch(`${apiUrl}/api/myOrderData`, {
+        await fetch(`https://${apiUrl}/api/myOrderData`, {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',
@@ -35,7 +35,7 @@ export default function MyOrder() {
 
     useEffect(() => {
         fetchMyOrder()
-    }, [])
+    }, []);
 
     return (
         <div>

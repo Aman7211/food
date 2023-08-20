@@ -12,7 +12,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 // const apiUrl = "http://localhost:4000/api/foodData" || "https://food-lecp.onrender.com/api/foodData";
 const loadData = async ()=>{
-  let response = await fetch(`${apiUrl}/api/foodData`,{
+  let response = await fetch(`https://${apiUrl}/api/foodData`,{
     method: "POST",
     headers: {
       'Content-Type' : 'application/json'

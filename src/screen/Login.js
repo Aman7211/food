@@ -14,7 +14,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({ email: credentials.email, password: credentials.password }))
-        const response = await fetch(`${apiUrl}/api/loginuser`, {
+        const response = await fetch(`https://${apiUrl}/api/loginuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

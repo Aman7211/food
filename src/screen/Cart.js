@@ -23,7 +23,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
   
   const HandleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch(`${apiUrl}/api/orderData`, {
+    let response = await fetch(`https://${apiUrl}/api/orderData`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
