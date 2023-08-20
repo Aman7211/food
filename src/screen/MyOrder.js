@@ -5,11 +5,11 @@ import Navbar1 from '../components/Navbar1';
 export default function MyOrder() {
 
     const [orderData, setorderData] = useState({});
-    //    const apiUrl = "http://localhost:4000/api/myOrderData" || ;
-    
+    //    const apiUrl = "http://localhost:4000/api/" || "https://food-lecp.onrender.com/api/myOrderData";
+       const apiUrl = process.env.REACT_APP_API_URL;
        const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch("https://food-lecp.onrender.com/api/myOrderData", {
+        await fetch(`${apiUrl}/api/myOrderData`, {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',
