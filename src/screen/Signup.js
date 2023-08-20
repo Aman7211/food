@@ -6,11 +6,11 @@ import Navbar1 from '../components/Navbar1';
 
 export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
-
+    const apiUrl = "http://localhost:4000/api/createuser" || "https://food-lecp.onrender.com/api/createuser";
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, location: credentials.geolocation }))
-        const response = await fetch("http://localhost:4000/api/createuser", {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

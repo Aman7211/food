@@ -18,10 +18,10 @@ export default function Cart() {
   //   console.log(index)
   //   dispatch({type:"REMOVE",index:index})
   // }
-
+  const apiUrl = "http://localhost:4000/api/orderData" || "https://food-lecp.onrender.com/api/orderData";
   const HandleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("http://localhost:4000/api/orderData", {
+    let response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

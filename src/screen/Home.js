@@ -8,9 +8,9 @@ export default function Home() {
   const [search, setsearch] = useState('');
 const [foodcat, setfoodcat] = useState([]);
 const [fooditem, setfooditem] = useState([]);
-
+const apiUrl = "http://localhost:4000/api/foodData" || "https://food-lecp.onrender.com/api/foodData";
 const loadData = async ()=>{
-  let response = await fetch("http://localhost:4000/api/foodData",{
+  let response = await fetch(apiUrl,{
     method: "POST",
     headers: {
       'Content-Type' : 'application/json'
@@ -71,8 +71,7 @@ useEffect(()=>{
         {data.CategoryName}
         </div>
         {
-          fooditem!== []? fooditem.filter((item)=>item.CategoryName === data.CategoryName && (item.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
-          .map(filterItems =>{
+          fooditem!== []? fooditem.filter((item)=>item.CategoryName === data.CategoryName && (item.name.toLowerCase().includes(search.toLocaleLowerCase()))).map(filterItems =>{
             return(
               <div key={filterItems._id} className='col-12 col-md-6 col-lg-3'>
                 <Card fooditem={filterItems}
